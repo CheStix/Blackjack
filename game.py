@@ -48,13 +48,7 @@ class Hand:
 
     def __str__(self):
         """Return a string of current hand composition"""
-        # hand_comp = ""
-        # Better way to do this? List comprehension?
-
         hand_comp = str([' ' + card.__str__() for card in self.cards])
-        # for card in self.cards:
-        #     card_name = card.__str__()
-        #     hand_comp += " " + card_name
         return 'The hand has {}'.format(hand_comp)
 
     def card_add(self, card):
@@ -96,14 +90,10 @@ class Deck:
 
     def deal(self):
         """ Grab the first item in the deck """
-        single_card = self.deck.pop()
-        return single_card
+        return self.deck.pop()
 
     def __str__(self):
-        # deck_comp = ""
         deck_comp = str([" " + card.__str__() for card in self.deck])
-        # for card in self.deck:
-        #     deck_comp += " " + card.__str__()
         return 'The deck has' + deck_comp
 
 
@@ -275,12 +265,12 @@ def intro():
 """The following code will initiate the game!"""
 
 # Create Deck
-#deck = Deck()
+# deck = Deck()
 # Shuffle it
-#deck.shuffle()
+# deck.shuffle()
 # Create player and dealer hands
-#player_hand = Hand()
-#dealer_hand = Hand()
+# player_hand = Hand()
+# dealer_hand = Hand()
 # print the intro
 intro()
 # Deal out the cards and start the game!
